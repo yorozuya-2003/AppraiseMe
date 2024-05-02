@@ -325,7 +325,7 @@ function HomePage() {
               <button
                 id="addbutton"
                 style={{
-                  padding: "0px 20px",
+                  padding: "2px 20px",
                   fontSize: "13px",
                   height: "30px",
                 }}
@@ -432,7 +432,6 @@ function HomePage() {
             <button
               onClick={toggleAddDiv2}
               style={{
-                boxSizing: "19px",
                 backgroundColor: "white",
                 color: "blue",
                 border: "none",

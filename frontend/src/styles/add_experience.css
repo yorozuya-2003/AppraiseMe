@@ -1,13 +1,26 @@
 .addexp {
   display: inline-flex;
-  padding: 200px 544px 273px 160px;
+  margin-top: 50px;
+  margin-bottom: 20px;
+  margin-left: 10%;
+  margin-right: 5%;
   flex-direction: column;
   align-items: flex-start;
-  gap: 64px;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+
+.continue{
+  align-items: center;
+  justify-content: center;
+}
+.continue button{
+  width: 80%;
 }
 
 .addexp h1 {
-  width: 497px;
+  width: fit-content;
   color: #000;
   font-family: Inter;
   font-size: 48px;
@@ -17,12 +30,11 @@
 }
 
 .addexp-box {
+  width: 100%;
   display: flex;
-  /* width: 900px; */
-  padding: 32px;
-  justify-content: center;
+  padding: 25px;
+  justify-content: space-between;
   align-items: center;
-  gap: 96px;
   border: 1px solid #f3f3f3;
   background: #fff;
   border-radius: 16px;
@@ -33,34 +45,36 @@
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+  gap: 15px;
 }
 
-.addexp-box p.exp-num {
+.exp-num {
   font-size: 18px;
+  width: 5%;
 }
 
-.addexp-box .exp-details {
+.exp-details {
+  width: 80%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 8px;
 }
 
-.addexp-box .exp-details p {
+.exp-details p {
   margin: 0px;
 }
 
-.addexp-box .edit-delete-btns {
+.edit-delete-btns {
   display: flex;
-  padding: 0px 8px;
+  padding: 0px;
   justify-content: center;
   align-items: center;
-  gap: 24px;
 }
 
-.addexp-box .edit-exp-btn {
+.edit-exp-btn {
   display: flex;
-  padding: 16px 32px;
+  padding: 8px 16px;
   justify-content: center;
   align-items: center;
   gap: 16px;
@@ -75,69 +89,65 @@
   line-height: normal;
 }
 
-.addexp-box .delete-exp-btn {
+.delete-exp-btn {
   background: none;
   border: none;
+  padding: 0px;
 }
 
-.addexp-box .addexp-box-contents {
+#emp{
+  width: 75% !important;
+}
+
+.addexp-box-contents {
+  width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  gap: 32px;
-  border-radius: 0px;
+  align-items: center;
   border: none;
   background: none;
   box-shadow: none;
-}
+} 
 
-.addexp-box .addexp-form {
+.addexp-form {
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 24px;
+  gap: 20px;
 }
 
-.addexp-box .addexp-form .add-exp-form-section {
+.add-exp-form-section{
   display: flex;
-  align-items: flex-start;
-  gap: 16px;
-  font-family: Inter;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-}
-
-.addexp-box .addexp-form .add-exp-form-section input {
-  display: flex;
-  width: 320px;
-  height: 56px;
-  padding: 16px;
-  align-items: flex-start;
+  justify-content: space-between;
   gap: 10px;
-  border-radius: 16px;
-  border: 1px solid #d9d9d9;
+  width: 100%;
 }
 
-.addexp-box .addexp-form .add-exp-form-section.title input {
+.add-exp-form-section input{
+  width: 40%;
+  padding: 8px;
+  border-radius: 10px;
+  border: 1px solid #d9d9d9;
+}
+.css-b62m3t-container{width: 40%;}
+.add-exp-form-section label{
+  font-weight: 500;
+}
+
+.add-exp-form-section{
   display: flex;
-  width: 240px;
-  height: 56px;
-  padding: 16px;
-  align-items: flex-start;
-  border-radius: 16px;
-  border: 1px solid #d9d9d9;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
-.addexp-box .addexp-form .add-exp-form-section input:focus {
+.add-exp-form-section input:focus {
   outline: none;
-  /* border: 1px solid #000; */
 }
 
 .addbutton {
   display: inline-flex;
-  padding: 32px;
+  padding: 20px;
   align-items: center;
   gap: 207px;
 
@@ -164,7 +174,7 @@
   background-color: rgb(234, 234, 234);
 }
 
-.addexp-box .addexp-form .continue h4 {
+.continue h4 {
   color: #4a4a4a;
   text-align: center;
   font-family: Inter;
@@ -174,35 +184,12 @@
   line-height: normal;
 }
 
-.addexp-box .addexp-form .continue {
+.continue {
   display: flex;
   padding: 8px;
   align-items: flex-start;
   gap: 16px;
-}
-
-.addexp-box .addexp-form .continue-btn {
-  display: flex;
-  padding: 16px 32px;
-  justify-content: center;
-  align-items: center;
-  gap: 16px;
-  border-radius: 32px;
-  background: #3818fd;
-  border-width: 0px;
-  color: #fff;
-  font-family: Inter;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-}
-
-.addexp-box .addexp-form .continue .faq-div {
-  display: flex;
-  padding: 16px 0px;
-  align-items: flex-start;
-  gap: 10px;
+  width: 100%;
 }
 
 .continue-btn {
@@ -220,4 +207,115 @@
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+}
+
+.faq-div {
+  display: flex;
+  padding: 16px 0px;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+#cont{
+  width: 100%;
+}
+
+#addexpa{
+  width: 100% !important;
+}
+
+#addexpbtn{
+  width: 100% !important;
+}
+
+#addbtnaddexp{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.add-btn-text{
+  width: 40%;
+}
+
+@media (max-width: 600px){
+  .addexp-box{
+    flex-direction: column;
+    gap: 22px;
+  }
+  
+  #addexpbox1 div{
+    width: 95%;
+  }
+  .edit-delete-btns{
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+  }
+}
+
+@media (max-width: 565px){
+  .addexp h1{
+    font-size: 35px ;
+  }
+  #emp{
+    padding-left: 6px;
+    padding-right: 6px;
+    width: 90% !important;
+  }
+}
+
+@media (max-width: 480px){
+  .exp-details div p{
+    font-size: 13px;
+  }
+  .exp-details div label{
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 410px){
+  .addexp h1{
+    font-size: 30px ;
+  }
+  
+  .add-exp-form-section label{
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 350px){
+  .addexp{
+    margin-right: 10px;
+    margin-left: 15px;
+  }
+  .exp-details div label{
+    font-size: 12px;
+  }
+  .exp-details div p{
+    font-size: 12px;
+  }
+  .addexp h1{
+    font-size: 24px;
+    text-align: center;
+  }
+  .add-exp-form-section input{
+    font-size: 14px;
+    
+  }
+  .add-exp-form-section label{
+    margin-left: 0px !important;
+  }
+}
+
+@media (max-width: 280px){
+  .exp-details div label{
+    font-size: 11px;
+  }
+  .exp-details div p{
+    font-size: 11px;
+  }
+  .addexp h1{
+    font-size: 20px;
+    text-align: center;
+  }
 }

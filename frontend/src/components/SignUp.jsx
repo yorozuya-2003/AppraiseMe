@@ -175,7 +175,7 @@ function SignUp() {
           )}
 
           {registrationStep === 2 && (
-            <div className="signin-div" style={{marginTop:'130px'}}>
+            <div className="signin-div" id="verify" style={{marginTop:'130px',width:'auto'}}>
               <h1 className="heading" style={{textAlign:'center'}}>Enter OTP</h1>
               <form onSubmit={handleOtpSubmit} className="signup-form" style={{width:'450px',alignItems:'center'}}>
                 <p style={{fontSize:'12px', width:'100%',border:'none',marginBottom:'20px'}}>
@@ -197,9 +197,10 @@ function SignUp() {
               <form onSubmit={handlePasswordSubmit} className="signup-form">
 
                 <div 
+                  id="pass"
                   style={{
                     display: 'flex',
-                    width: '320px',
+                    width: '100%',
                     height: '56px',
                     padding: '16px',
                     borderRadius: '16px',
@@ -208,6 +209,7 @@ function SignUp() {
                   }}
                 >
                   <input
+                    
                     style={{ border: 'none',width:'100%',outline: 'none' }}
                     type={showPassword ? 'text' : 'password'}
                     placeholder="Password"
@@ -224,9 +226,10 @@ function SignUp() {
                 <div className="password-strength">{passwordStrength}</div>
 
                 <div 
+                  id="confPass"
                   style={{
                     display: 'flex',
-                    width: '320px',
+                    width: '100%',
                     height: '56px',
                     padding: '16px',
                     borderRadius: '16px',
@@ -235,6 +238,7 @@ function SignUp() {
                   }}
                 >
                   <input
+                    
                     style={{ border: 'none',width:'100%',outline: 'none' }}
                     type={showPassword2 ? 'text' : 'password'}
                     placeholder="Password"

@@ -70,7 +70,7 @@ function SignIn() {
             <div 
               style={{
                 display: 'flex',
-                width: '320px',
+                width: '100%',
                 height: '56px',
                 padding: '16px',
                 borderRadius: '16px',

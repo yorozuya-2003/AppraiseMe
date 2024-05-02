@@ -5,6 +5,7 @@
   padding: 30px 5px 5px 80px;
   gap: 32px;
 }
+
 .homediv1 p {
   font-family: Inter;
   font-size: 30px;
@@ -15,6 +16,7 @@
   height: 29px;
   padding-top: 33px;
 }
+
 .homediv1 img {
   height: 100px;
   width: 150px;
@@ -29,18 +31,15 @@
   border-radius: 50px;
   margin: 20px;
   margin-top: 80px;
-  margin-left: 160px;
   max-height: 7000px;
-  width: 1125px;
-  /* overflow:scroll; */
+  width: 95%;
 }
 
-.homediv3 .experiences {
-  width: 430px;
-  height: 572px;
+.experiences {
+  width: 40%;
+  height: 100%;
   padding: 12px;
   border-radius: 32px, 0px, 0px, 0px;
-  gap: 32px;
   border-right: solid 1px;
   border-width: 0px;
   border-color: #cdcdcd;
@@ -48,4 +47,60 @@
   font-size: 20px;
   font-weight: 400;
   line-height: 24px;
+}
+
+.experiences div{
+  width: 100%;
+}
+
+.experiences div p{
+  width: 60%;
+}
+.experiences div a{
+  display: flex;
+  justify-content: end;
+  width: 40%;
+}
+
+.about{
+  width: 55%;
+  height: 100%;
+}
+
+@media (max-width:650px){
+  .homediv3{
+    flex-direction: column;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  .homediv3 div{
+    width: 100%;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  .about{
+    border: none !important;
+  }
+  .about-bio{
+    border-top: solid #cdcdcd !important;
+    border-width: 0px;
+    padding-top: 10px !important;
+  }
+  .reviews-div{
+    border: none !important;
+  }
+  .experiences div p{
+    text-align: center;
+  }
+}
+
+@media (max-width:310px){
+  .homediv3{
+    border-radius: 0px;
+  }
+  .homediv3 div{
+    margin-left: 4px;
+    padding-left: 8px;
+  }
+
 }

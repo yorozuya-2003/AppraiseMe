@@ -1,10 +1,12 @@
-import { React, useState, useEffect } from "react";
+import { React, useState, useEffect,useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "../styles/header.css";
 import API_BASE_URL from "./ApiConfig";
 import axios from "axios";
 
+
 export default function Header() {
+
   const [user, setUser] = useState(null);
   useEffect(() => {
     const loggedInUser = localStorage.getItem("user");
@@ -25,12 +27,13 @@ export default function Header() {
     const query = e.target.value;
     setSearchQuery(query);
 
-    axios.get(`${API_BASE_URL}/search-suggestions?q=${query}`)
-      .then(response => {
+    axios
+      .get(`${API_BASE_URL}/search-suggestions?q=${query}`)
+      .then((response) => {
         setSuggestions(response.data);
       })
-      .catch(error => {
-        console.error('Error fetching search suggestions:', error);
+      .catch((error) => {
+        console.error("Error fetching search suggestions:", error);
       });
   };
 
@@ -38,7 +41,7 @@ export default function Header() {
 
   const handleSearch = () => {
     navigate(`/search?q=${searchQuery}`);
-  }
+  };
 
   const handleSearchSuggestionClick = (suggestion) => {
     const username = `${suggestion.username}`;
@@ -47,13 +50,14 @@ export default function Header() {
 
   return (
     <header className="header-div">
+      
       <h2>AppraiseMe</h2>
-      <button>Why AppraiseMe</button>
-      <Link to='/editdetails'>
-        <button>Edit Profile</button>
+      <button id="wam">Why AppraiseMe</button>
+      <Link to="/editdetails">
+        <button id="edit">Edit Profile</button>
       </Link>
-      <Link to='/myreviews'>
-        <button>My Reviews</button>
+      <Link to="/myreviews">
+        <button id="reviews">My Reviews</button>
       </Link>
 
       <div className="search-container">
@@ -68,19 +72,22 @@ export default function Header() {
         {suggestions.length > 0 && (
           <ul className="suggestions">
             {suggestions.map((suggestion, index) => (
-              <li key={index} onClick={() => handleSearchSuggestionClick(suggestion)}>
+              <li
+                key={index}
+                onClick={() => handleSearchSuggestionClick(suggestion)}
+              >
                 {suggestion.first_name} {suggestion.last_name}
               </li>
             ))}
           </ul>
         )}
-        <button id="search-button" onClick={handleSearch}>Search</button>
+        <button id="search-button" onClick={handleSearch}>
+          Search
+        </button>
       </div>
-      
-      
-      
+
       {user ? (
-        <Link style={{textDecoration: 'none'}} to='/'>
+        <Link style={{ textDecoration: "none" }} to="/">
           <button id="signup" onClick={handleLogout}>
             Log Out
           </button>

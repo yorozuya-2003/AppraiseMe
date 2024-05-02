@@ -114,12 +114,9 @@ function AddExperience() {
   const selectStyles = {
     control: (provided) => ({
       ...provided,
-      width: "320px",
-      height: "56px",
-      borderRadius: "16px",
+      width: "100%",
+      borderRadius: "10px",
       border: "1px solid #d9d9d9",
-      padding: "0px",
-      paddingLeft: "16px",
     }),
     option: (provided, state) => ({
       ...provided,
@@ -178,17 +175,41 @@ function AddExperience() {
       <h1>👔 Add any previous employment history</h1>
 
       {models.map((model, index) => (
-        <div className="addexp-box">
-          <p className="exp-num">Work Experience {index + 1}</p>
+        <div className="addexp-box " id="addexpbox1">
           <div className="exp-details">
-            <p style={{ fontWeight: "700" }}>{model.title}</p>
-            <p>
-              {model.company} · {model.emp_type}
-            </p>
-            <p>{convertDateRange(model.start_time, model.end_time)}</p>
-            <p>
-              {model.location} · {model.location_type}
-            </p>
+            <div style={{display:"flex",justifyContent:"space-between",width:"100%",gap:"10px"}}>
+              <label htmlFor="">Title:</label>
+              <p style={{ fontWeight: "700" }}>{model.title}</p>
+            </div>
+
+            <div style={{display:"flex",justifyContent:"space-between",width:"100%"}}>
+              <label htmlFor="">Company:</label>
+              <p>
+                {model.company}
+              </p>
+            </div>
+            <div style={{display:"flex",justifyContent:"space-between",width:"100%"}}>
+              <label htmlFor="">Job Type:</label>
+              <p>
+                {model.emp_type}
+              </p>
+            </div>
+            <div style={{display:"flex",justifyContent:"space-between" ,width:"100%"}}>
+              <label htmlFor="">From:</label>
+              <p>{model.start_time}</p>
+            </div>
+            <div style={{display:"flex",justifyContent:"space-between",width:"100%"}}>
+              <label htmlFor="">To:</label>
+              <p>
+                {model.end_time}
+              </p>
+            </div>
+            <div style={{display:"flex",flexDirection:"row",justifyContent:"space-between",width:"100%"}}>
+              <label htmlFor="">Location:</label>
+              <p>
+                {model.location} · {model.location_type}
+              </p>
+            </div>
           </div>
           <div className="edit-delete-btns">
             <button className="edit-exp-btn">Edit</button>
@@ -210,6 +231,9 @@ function AddExperience() {
         <div className="addexp-box-contents">
           <form onSubmit={handleSubmit} className="addexp-form" action="">
             <div className="add-exp-form-section title">
+              <label htmlFor="" style={{ marginLeft: "25px" }}>
+                Title
+              </label>
               <input
                 type="text"
                 name="title"
@@ -221,6 +245,9 @@ function AddExperience() {
             </div>
 
             <div className="add-exp-form-section">
+              <label htmlFor="" style={{ marginLeft: "25px" }}>
+                Job type
+              </label>
               <Select
                 value={{ label: formData.emp_type, value: formData.emp_type }}
                 onChange={(selectedOption) =>
@@ -232,7 +259,11 @@ function AddExperience() {
                 ]}
                 styles={selectStyles}
               />
-
+            </div>
+            <div className="add-exp-form-section">
+              <label htmlFor="" style={{ marginLeft: "25px" }}>
+                Company
+              </label>
               <input
                 type="text"
                 name="company"
@@ -244,6 +275,9 @@ function AddExperience() {
             </div>
 
             <div className="add-exp-form-section">
+              <label htmlFor="" style={{ marginLeft: "25px" }}>
+                Location
+              </label>
               <input
                 type="text"
                 name="location"
@@ -252,7 +286,11 @@ function AddExperience() {
                 placeholder="Location"
                 autoComplete="off"
               />
-
+            </div>
+            <div className="add-exp-form-section">
+              <label htmlFor="" style={{ marginLeft: "25px" }}>
+                Location Type
+              </label>
               <Select
                 value={{
                   label: formData.location_type,
@@ -274,32 +312,30 @@ function AddExperience() {
             </div>
 
             <div className="add-exp-form-section">
-              <div style={{ display: "flex", flexDirection: "column" }}>
-                <label htmlFor="" style={{ marginLeft: "15px" }}>
-                  Start Time
-                </label>
-                <input
-                  type="date"
-                  name="start_time"
-                  value={formData.start_time}
-                  onChange={handleChange}
-                />
-              </div>
+              <label htmlFor="" style={{ marginLeft: "25px" }}>
+                Start Time
+              </label>
+              <input
+                type="date"
+                name="start_time"
+                value={formData.start_time}
+                onChange={handleChange}
+              />
+            </div>
 
-              <div style={{ display: "flex", flexDirection: "column" }}>
-                <label
-                  htmlFor=""
-                  style={{ marginLeft: "15px", marginDown: "20px" }}
-                >
-                  End Time
-                </label>
-                <input
-                  type="date"
-                  name="end_time"
-                  value={formData.end_time}
-                  onChange={handleChange}
-                />
-              </div>
+            <div className="add-exp-form-section">
+              <label
+                htmlFor=""
+                style={{ marginDown: "20px", marginLeft: "25px" }}
+              >
+                End Time
+              </label>
+              <input
+                type="date"
+                name="end_time"
+                value={formData.end_time}
+                onChange={handleChange}
+              />
             </div>
 
             <div className="continue">
@@ -311,7 +347,7 @@ function AddExperience() {
         </div>
       </div>
       {buttonLabel1 && (
-        <button onClick={toggleAddDiv} className="addbutton" id="addbutton">
+        <button onClick={toggleAddDiv} className="addbutton" id="addbtnaddexp">
           <div className="add-btn-text">
             {buttonLabel1}
             <br />
@@ -323,9 +359,9 @@ function AddExperience() {
         </button>
       )}
 
-      <Link style={{ textDecoration: "none" }} to="/home">
-        <button className="continue-btn" type="submit">
-          Continue
+      <Link style={{ textDecoration: "none" }} to="/home" id="addexpa">
+        <button id="addexpbtn" className="continue-btn" type="submit">
+          DONE
         </button>
       </Link>
     </div>

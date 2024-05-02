@@ -116,7 +116,7 @@ function EditDetails() {
   const selectStyles = {
     control: (provided) => ({
       ...provided,
-      width: "320px",
+      width: "100%",
       height: "56px",
       borderRadius: "16px",
       border: "1px solid #d9d9d9",
@@ -151,6 +151,7 @@ function EditDetails() {
         <div className="editdetails-box">
           <div className="preferred-pronouns">
             <Select
+              className="pronouns"
               name="pronouns"
               value={{ label: formData.pronouns, value: formData.pronouns }}
               onChange={(selectedOption) =>
@@ -197,6 +198,7 @@ function EditDetails() {
             </div>
 
             <Select
+              className="gender"
               name="gender"
               value={{ label: formData.gender, value: formData.gender }}
               onChange={(selectedOption) =>
@@ -212,12 +214,9 @@ function EditDetails() {
           </div>
 
           <div className="continue">
-            <button className="continue-btn" type="submit">
+            <button className="continue-btn" id="cont" type="submit">
               Save Details
             </button>
-            <div className="faq-div">
-              <h4>Have a question? See our FAQ </h4>
-            </div>
           </div>
         </div>
       </form>

@@ -25,6 +25,7 @@ body {
   font-size: 48px;
   font-style: normal;
   font-weight: 400;
+  text-align: center;
   line-height: normal;
 }
 
@@ -42,7 +43,7 @@ body {
 
   > input {
     display: flex;
-    width: 320px;
+    width: 100%;
     height: 56px;
     padding: 16px;
     align-items: flex-start;
@@ -52,7 +53,7 @@ body {
   }
   > button {
     display: flex;
-    width: 320px;
+    width: 100%;
     padding: 16px 32px;
     justify-content: center;
     align-items: center;
@@ -70,7 +71,7 @@ body {
   > p {
     border: solid #d9d9d9;
     border-width: 1.5px;
-    width: 320px;
+    width: 100%;
     height: 0px;
   }
   > h4 {
@@ -80,7 +81,102 @@ body {
   }
 }
 
+.signup-form div{
+  width: 100%;
+}
+
+.heading{
+  width: fit-content;
+}
+
 #dont-have-an-account a {
   color: #3818fd;
   text-decoration: none;
+}
+
+@media (max-width:520px){
+  .heading{
+    font-size: 40px;
+    margin-bottom: 35px;
+  }
+  .signup-form{
+    padding: 10px;
+  }
+  
+  #verify{
+    width: 380px !important;
+    align-items: center !important;
+  }
+  #verify form{
+    width: 100% !important;
+  }
+  body{
+    align-items: center !important;
+  }
+}
+
+@media (max-width:440px){
+  .heading{
+    font-size: 35px;
+  }
+  .signup-form{
+    width: 250px;
+  }
+  .signin-div h4{
+    font-size: 16px;
+  }
+  #verify{
+    width: 300px !important;
+  }
+  #pass{
+    padding-bottom: 0px !important;
+  }
+  #confPass{
+    padding-top: 0px !important;
+  }
+}
+
+@media (max-width:380px){
+  .heading{
+    font-size: 30px;
+  } 
+}
+
+@media (max-width:330px){
+  .heading{
+    font-size: 28px;
+  }
+  .signup-form{
+    width: 230px;
+  }
+  .signup-form button{
+    padding: 12px 24px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width:310px){
+  .heading{
+    font-size: 25px;
+  }
+  .signup-form{
+    width: 220px;
+  }
+  .signup-form button{
+    padding: 12px 24px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width:290px){
+  .heading{
+    font-size: 22px;
+  }
+  .signup-form{
+    width: 210px;
+  }
+  .signup-form button{
+    padding: 12px 24px;
+    font-size: 11px;
+  }
 }

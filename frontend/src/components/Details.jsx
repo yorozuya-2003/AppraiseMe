@@ -90,7 +90,7 @@ function Details() {
   const selectStyles = {
     control: (provided) => ({
       ...provided,
-      width: "320px",
+      width: "100%",
       height: "56px",
       borderRadius: "16px",
       border: "1px solid #d9d9d9",
@@ -128,6 +128,7 @@ function Details() {
         <div className="details-box">
           <div className="preferred-pronouns">
             <Select
+              className="pronouns"
               name="pronouns"
               value={{ label: formData.pronouns, value: formData.pronouns }}
               onChange={(selectedOption) =>
@@ -175,6 +176,7 @@ function Details() {
             </div>
 
             <Select
+              className="gender"
               name="gender"
               value={{ label: formData.gender, value: formData.gender }}
               onChange={(selectedOption) =>
@@ -191,7 +193,7 @@ function Details() {
           </div>
 
           <div className="continue">
-            <button className="continue-btn" type="submit">
+            <button className="continue-btn" id="cont" type="submit">
               Continue
             </button>
             <div className="faq-div">

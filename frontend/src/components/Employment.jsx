@@ -58,12 +58,11 @@ function Employment() {
   const selectStyles = {
     control: (provided) => ({
       ...provided,
-      width: "320px",
-      height: "56px",
-      borderRadius: "16px",
+      width: "100%",
+      borderRadius: "10px",
       border: "1px solid #d9d9d9",
       padding: "0px",
-      paddingLeft: "16px",
+      paddingLeft: "5px",
     }),
     option: (provided, state) => ({
       ...provided,
@@ -90,10 +89,13 @@ function Employment() {
     <div className="addexp">
       <h1>👔 Add any previous employment history</h1>
 
-      <div className="addexp-box" id="add_div">
+      <div className="addexp-box" id="emp">
         <div className="addexp-box-contents">
           <form onSubmit={handleSubmit} className="addexp-form" action="">
             <div className="add-exp-form-section title">
+              <label htmlFor="">
+                Title
+              </label>
               <input
                 type="text"
                 name="title"
@@ -105,6 +107,9 @@ function Employment() {
             </div>
 
             <div className="add-exp-form-section">
+              <label htmlFor="">
+                Job Type
+              </label>
               <Select
                 value={{ label: formData.emp_type, value: formData.emp_type }}
                 onChange={(selectedOption) =>
@@ -116,7 +121,12 @@ function Employment() {
                 ]}
                 styles={selectStyles}
               />
+            </div>
 
+            <div className="add-exp-form-section">
+              <label htmlFor="">
+                Company
+              </label>
               <input
                 type="text"
                 name="company"
@@ -128,6 +138,9 @@ function Employment() {
             </div>
 
             <div className="add-exp-form-section">
+              <label htmlFor="">
+                Location
+              </label>
               <input
                 type="text"
                 name="location"
@@ -136,7 +149,12 @@ function Employment() {
                 placeholder="Location"
                 autoComplete="off"
               />
+            </div>
 
+            <div className="add-exp-form-section">
+              <label htmlFor="">
+                Location Type
+              </label>
               <Select
                 value={{
                   label: formData.location_type,
@@ -158,8 +176,7 @@ function Employment() {
             </div>
 
             <div className="add-exp-form-section">
-              <div style={{ display: "flex", flexDirection: "column" }}>
-                <label htmlFor="" style={{ marginLeft: "15px" }}>
+                <label htmlFor="" >
                   Start Time
                 </label>
                 <input
@@ -168,12 +185,11 @@ function Employment() {
                   value={formData.start_time}
                   onChange={handleChange}
                 />
-              </div>
+            </div>
 
-              <div style={{ display: "flex", flexDirection: "column" }}>
+            <div className="add-exp-form-section">
                 <label
                   htmlFor=""
-                  style={{ marginLeft: "15px", marginDown: "20px" }}
                 >
                   End Time
                 </label>
@@ -183,10 +199,9 @@ function Employment() {
                   value={formData.end_time}
                   onChange={handleChange}
                 />
-              </div>
             </div>
 
-            <div style={{ marginTop: "10px" }} className="continue">
+            <div style={{ marginTop: "10px" }} id="continue-details" className="continue">
               <button className="continue-btn" type="submit">
                 Continue
               </button>
@@ -207,7 +222,7 @@ function Employment() {
                   </Link>
                 </h4>
               </div>
-            </div>
+            </div>  
             <div
               style={{ marginTop: "2px", fontSize: "20px" }}
               id="error-message"
