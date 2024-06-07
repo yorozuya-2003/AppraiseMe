@@ -159,3 +159,14 @@
     display: block;
   }
 }
+
+@media (max-width: 440px){
+  .header-div h2 {
+    margin-right: 0;
+    display: none;
+  }
+  .header-div {
+    display: flex;
+    gap: 0;
+  }
+}
